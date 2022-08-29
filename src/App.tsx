@@ -1,9 +1,16 @@
-function App() {
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyle } from './styles/global'
+import { defaultTheme } from './styles/theme/default'
 
+import { Transaction } from './pages/Transaction'
+
+function App() {
   return (
-    <div>
-      <h1>DT Money</h1>
-    </div>
+    <ThemeProvider theme={defaultTheme}>
+      <Transaction />
+
+      <GlobalStyle />
+    </ThemeProvider>
   )
 }
 
