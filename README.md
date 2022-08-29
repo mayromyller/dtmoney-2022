@@ -1,12 +1,12 @@
 <h1 align="center">
   <img src="./public/symbol.svg" /> DT Money
-</h1
+  
+  <br />
 
-<p>
   <img src="https://img.shields.io/badge/made%20by-Mayro%20Myller-00B37E?style=flat-square">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/mayromyller/dtmoney-2022?color=00B37E&style=flat-square">
-  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/mayromyller/dtmoney-2022?color=00B37E&style=flat-square">
-</p>
+  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/mayromyller/dtmoney-2022?color=00B37E&style=flat-square">    
+</h1>
 
 ## Sobre o projeto
 
