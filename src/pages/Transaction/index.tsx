@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Header } from '../../components/Header'
+import { Search } from '../../components/Search'
 import { Summary } from '../../components/Summary'
 
 import * as S from './style'
@@ -12,6 +13,7 @@ export function Transaction() {
       <Summary />
 
       <S.Container>
+        <Search />
         <S.Table>
           <tbody>
             <tr>
