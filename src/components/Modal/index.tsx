@@ -1,5 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog'
-import { X } from 'phosphor-react'
+import { X, ArrowCircleDown, ArrowCircleUp } from 'phosphor-react'
 
 import * as S from './style'
 
@@ -18,6 +18,17 @@ export function Modal() {
           <input type="text" placeholder="Descrição" required />
           <input type="number" placeholder="Preço" required />
           <input type="text" placeholder="Categoria" required />
+
+          <S.Type>
+            <S.TypeButton variant="income" value="income">
+              <ArrowCircleUp size={24} />
+              Entrada
+            </S.TypeButton>
+            <S.TypeButton variant="outcome" value="outcome">
+              <ArrowCircleDown size={24} />
+              Saída
+            </S.TypeButton>
+          </S.Type>
 
           <button type="submit">Cadastrar</button>
         </form>
