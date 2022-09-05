@@ -1,12 +1,17 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 
 import { Header } from '../../components/Header'
 import { Search } from '../../components/Search'
 import { Summary } from '../../components/Summary'
 
+import { useTransaction } from '../../hooks/useTransaction'
+import { priceFormatter, dateFormatter } from '../../utils/formatter'
+
 import * as S from './style'
 
 export function Transaction() {
+  const { transactions } = useTransaction()
+
   return (
     <div>
       <Header />
@@ -16,23 +21,19 @@ export function Transaction() {
         <Search />
         <S.Table>
           <tbody>
-            <tr>
-              <td width="50%">Desenvolvimento de site</td>
-              <td>
-                <S.Highlight variant="income">R$ 12.000,00</S.Highlight>
-              </td>
-              <td>Venda</td>
-              <td>13/04/2022</td>
-            </tr>
-
-            <tr>
-              <td width="50%">Hambúrguer</td>
-              <td>
-                <S.Highlight variant="outcome">R$ 12.000,00</S.Highlight>
-              </td>
-              <td>Alimentação</td>
-              <td>10/04/2022</td>
-            </tr>
+            {transactions.map((transaction) => (
+              <tr key={transaction.id}>
+                <td width="50%">{transaction.description}</td>
+                <td>
+                  <S.Highlight variant={transaction.type}>
+                    {transaction.type === 'outcome' && '- '}
+                    {priceFormatter.format(transaction.price)}
+                  </S.Highlight>
+                </td>
+                <td>{transaction.category}</td>
+                <td>{dateFormatter.format(new Date(transaction.createdAt))}</td>
+              </tr>
+            ))}
           </tbody>
         </S.Table>
       </S.Container>
